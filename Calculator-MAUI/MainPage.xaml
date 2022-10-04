@@ -1,0 +1,411 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Calculator_MAUI.MainPage"
+             Padding="{OnPlatform   iOS='0,20,0,0'}"
+
+             >
+
+
+
+
+
+    <Grid 
+        Padding="10.0"
+        BackgroundColor="Black"  
+        ColumnSpacing="0.5"
+        RowSpacing="0.5"
+          >
+        
+    <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+<Label 
+    
+       x:Name="result"
+       Grid.Row="2"
+       Grid.ColumnSpan="5"
+       BackgroundColor="Transparent"
+       FontAttributes="Bold"
+       FontSize="30"
+       FontFamily="boldfont"
+       HorizontalTextAlignment="End"
+       LineBreakMode="NoWrap"
+       Text="0"
+       TextColor="Transparent"
+       VerticalTextAlignment="Center"
+       />
+        <Label 
+    
+       x:Name="result2"
+       Grid.Row="2"
+       Grid.ColumnSpan="5"
+       BackgroundColor="Transparent"
+       FontAttributes="Bold"
+       FontSize="30"
+       FontFamily="boldfont"
+       HorizontalTextAlignment="End"
+       LineBreakMode="NoWrap"
+       Text="0"
+       TextColor="DarkOrange"
+       VerticalTextAlignment="Center"
+       />
+
+        <Button
+            Grid.Row="3"
+            Grid.Column="1"
+            Grid.ColumnSpan="1"
+            BackgroundColor="Transparent"
+            Text="C"
+            Margin="0,0,0,0"
+            Padding="0,-10,0,0"
+            TextColor="DarkOrange"
+            FontSize="40"
+            Clicked="OnClear"
+            FontFamily="boldfont"
+
+        />
+        <Button
+            Grid.Row="3"
+            Grid.Column="2"
+            Grid.ColumnSpan="1"
+            BackgroundColor="Transparent"
+            Text="⌫"
+            Clicked="onOperatorSelection"
+            Margin="0,0,0,0"
+            Padding="0,-10,0,0"
+            TextColor="DarkOrange"
+            FontSize="46"
+                        FontFamily="boldfont"
+ 
+        />
+        <Button
+            Grid.Row="3"
+            Grid.Column="3"
+            Grid.ColumnSpan="1"
+            BackgroundColor="Transparent"
+            Text="%"
+            Margin="0,0,0,0"
+            Padding="0,-10,0,0"
+            TextColor="DarkOrange"
+            FontSize="46"
+                        FontFamily="boldfont"
+        />
+        <Button
+            Grid.Row="3"
+            Grid.Column="4"
+            Grid.ColumnSpan="1"
+            BackgroundColor="Transparent"
+            Text="÷"
+            Clicked="onOperatorSelection"
+            TextColor="DarkOrange"
+            FontSize="46"
+            Margin="0,0,0,0"
+            Padding="0,-10,0,0"
+                        FontFamily="boldfont"
+        />
+        <Button
+            Grid.Row="4"
+            Grid.Column="4"
+            Grid.ColumnSpan="1"
+            BackgroundColor="Transparent"
+            Text="×"
+            Clicked="onOperatorSelection"
+            TextColor="DarkOrange"
+            FontSize="46"
+            Margin="0,0,0,0"
+            Padding="0,-10,0,0"
+                        FontFamily="boldfont"
+        />
+        <Button
+            Grid.Row="5"
+            Grid.Column="4"
+            Grid.ColumnSpan="1"
+            BackgroundColor="Transparent"
+            Text="-"
+            Clicked="onOperatorSelection"
+            TextColor="DarkOrange"
+            FontSize="46"
+            Margin="0,0,0,0"
+            Padding="0,-10,0,0"
+                        FontFamily="boldfont"
+        />
+        <Button
+            Grid.Row="6"
+            Grid.Column="4"
+            Grid.ColumnSpan="1"
+            BackgroundColor="Transparent"
+            Text="+"
+            Clicked="onOperatorSelection"
+            TextColor="DarkOrange"
+            FontSize="46"
+            Margin="0,0,0,0"
+            Padding="0,-10,0,0"
+                        FontFamily="boldfont"
+        />
+        <Button
+            Grid.Row="7"
+            Grid.Column="2"
+            Grid.ColumnSpan="3"
+            BackgroundColor="DarkOrange"
+            Text="="
+            Clicked="onCalculate"
+            TextColor="White"
+            FontSize="46"
+            Margin="0,0,0,0"
+            Padding="0,-10,0,0"
+            CornerRadius="60"
+                        FontFamily="boldfont"
+        />
+ 
+        <Button
+            Grid.Row="7"
+            Grid.Column="1"
+            Grid.ColumnSpan="1"
+            BackgroundColor="Transparent"
+            Text="0"
+            Clicked="OnNumberSelection"
+            TextColor="White"
+            FontSize="60"
+            Margin="0,0,0,0"
+            Padding="0,-10,0,0"
+                        FontFamily="boldfont"
+        />
+
+        <Button
+            Grid.Row="6"
+            Grid.Column="3"
+            Grid.ColumnSpan="1"
+            BackgroundColor="Transparent"
+            Text="3"
+            Clicked="OnNumberSelection"
+            TextColor="White"
+            FontSize="60"
+            Margin="0,0,0,0"
+            Padding="0,-10,0,0"
+                        FontFamily="boldfont"
+        />
+        <Button
+            Grid.Row="6"
+            Grid.Column="2"
+            Grid.ColumnSpan="1"
+            BackgroundColor="Transparent"
+            Text="2"
+            Clicked="OnNumberSelection"
+            TextColor="White"
+            FontSize="60"
+            Margin="0,0,0,0"
+            Padding="0,-10,0,0"
+                        FontFamily="boldfont"
+        />
+        <Button
+            Grid.Row="6"
+            Grid.Column="1"
+            Grid.ColumnSpan="1"
+            BackgroundColor="Transparent"
+            Text="1"
+            Clicked="OnNumberSelection"
+            TextColor="White"
+            FontSize="60"
+            Margin="0,0,0,0"
+            Padding="0,-10,0,0"
+                        FontFamily="boldfont"
+        />
+        <Button
+            Grid.Row="5"
+            Grid.Column="3"
+            Grid.ColumnSpan="1"
+            BackgroundColor="Transparent"
+            Text="6"
+            Clicked="OnNumberSelection"
+            TextColor="White"
+            FontSize="60"
+            Margin="0,0,0,0"
+            Padding="0,-10,0,0"
+                        FontFamily="boldfont"
+        />
+        <Button
+            Grid.Row="5"
+            Grid.Column="2"
+            Grid.ColumnSpan="1"
+            BackgroundColor="Transparent"
+            Text="5"
+            Clicked="OnNumberSelection"
+            TextColor="White"
+            FontSize="60"
+            Margin="0,0,0,0"
+            Padding="0,-10,0,0"
+                        FontFamily="boldfont"
+        />
+        <Button
+            Grid.Row="5"
+            Grid.Column="1"
+            Grid.ColumnSpan="1"
+            BackgroundColor="Transparent"
+            Text="4"
+            Clicked="OnNumberSelection"
+            TextColor="White"
+            FontSize="60"
+            Margin="0,0,0,0"
+            Padding="0,-10,0,0"
+                        FontFamily="boldfont"
+        />
+        <Button
+            Grid.Row="4"
+            Grid.Column="3"
+            Grid.ColumnSpan="1"
+            BackgroundColor="Transparent"
+            Text="9"
+            Clicked="OnNumberSelection"
+            TextColor="White"
+            FontSize="60"
+            Margin="0,0,0,0"
+            Padding="0,-10,0,0"
+                        FontFamily="boldfont"
+        />
+        <Button
+            Grid.Row="4"
+            Grid.Column="2"
+            Grid.ColumnSpan="1"
+            BackgroundColor="Transparent"
+            Text="8"
+            Clicked="OnNumberSelection"
+            TextColor="White"
+            FontSize="60"
+            Margin="0,0,0,0"
+            Padding="0,-10,0,0"
+                        FontFamily="boldfont"
+        />
+        <Button
+            Grid.Row="4"
+            Grid.Column="1"
+            Grid.ColumnSpan="1"
+            BackgroundColor="Transparent"
+            Text="7"
+            Clicked="OnNumberSelection"
+            TextColor="White"
+            FontSize="60"
+            Margin="0,0,0,0"
+            Padding="0,-10,0,0"
+                        FontFamily="boldfont"
+        />
+        <Button
+            Grid.Row="4"
+            Grid.Column="0"
+            Grid.ColumnSpan="1"
+            BackgroundColor="Transparent"
+            Text="X^2"
+            Clicked="OnSquareRoot"
+            TextColor="Gray"
+            FontSize="30"
+            Margin="0,0,0,0"
+            Padding="0,-10,0,0"
+                        FontFamily="boldfont"
+        />
+        <Button
+            Grid.Row="5"
+            Grid.Column="0"
+            Grid.ColumnSpan="1"
+            BackgroundColor="Transparent"
+            Text="1/X"
+            TextColor="Gray"
+            FontSize="30"
+            Margin="0,0,0,0"
+            Padding="0,-10,0,0"
+                        FontFamily="boldfont"
+        />
+        <Button
+            Grid.Row="6"
+            Grid.Column="0"
+            Grid.ColumnSpan="1"
+            BackgroundColor="Transparent"
+            Text="√X"
+            TextColor="Gray"
+            FontSize="30"
+            Margin="0,0,0,0"
+            Padding="0,-10,0,0"
+                        FontFamily="boldfont"
+        />
+        <Button
+            Grid.Row="7"
+            Grid.Column="0"
+            Grid.ColumnSpan="1"
+            BackgroundColor="Transparent"
+            Text="π"
+            TextColor="Gray"
+            FontSize="30"
+            Margin="0,0,0,0"
+            Padding="0,-10,0,0"
+                        FontFamily="boldfont"
+        />
+        <Button
+            Grid.Row="3"
+            Grid.Column="0"
+            Grid.ColumnSpan="1"
+            BackgroundColor="Transparent"
+            Text="X^"
+            Clicked="onOperatorSelection"
+            TextColor="Gray"
+            FontSize="30"
+            Margin="0,0,0,0"
+            Padding="0,-10,0,0"
+                        FontFamily="boldfont"
+        />
+    </Grid>
+
+
+
+
+
+        <!--<ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Image
+                Source="work_in_progress.png"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                HeightRequest="200"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Calculator App v0.1"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+            
+
+            <Label
+                Text="Calculator App build with .net 6"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Calculator App build with .net 6"
+                FontSize="18"
+                HorizontalOptions="Center" />
+
+            <Button
+                x:Name="CounterBtn"
+                Text="Click me"
+                SemanticProperties.Hint="Counts the number of times you click"
+                Clicked="OnCounterClicked"
+                HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>-->
+
+</ContentPage>
