@@ -16,15 +16,15 @@
         ColumnSpacing="0.5"
         RowSpacing="0.5"
           >
-        
-    <Grid.ColumnDefinitions>
+
+        <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
-    </Grid.ColumnDefinitions>
-    <Grid.RowDefinitions>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
@@ -34,8 +34,8 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        
-<Label 
+
+        <Label 
     
        x:Name="result"
        Grid.Row="2"
@@ -172,7 +172,7 @@
             CornerRadius="60"
                         FontFamily="boldfont"
         />
- 
+
         <Button
             Grid.Row="7"
             Grid.Column="1"
@@ -358,7 +358,7 @@
             Grid.Column="0"
             Grid.ColumnSpan="1"
             BackgroundColor="Transparent"
-            Text="X^"
+            Text="^"
             Clicked="onOperatorSelection"
             TextColor="Gray"
             FontSize="30"
@@ -371,8 +371,7 @@
 
 
 
-
-        <!--<ScrollView>
+    <!--<ScrollView>
         <VerticalStackLayout
             Spacing="25"
             Padding="30,0"
